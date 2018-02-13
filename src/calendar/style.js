@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import * as defaultStyle from '../style';
 
 const STYLESHEET_ID = 'stylesheet.calendar.main';
+const FILLER_HEIGHT = 53;
 
 export default function getStyle(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
@@ -13,10 +14,10 @@ export default function getStyle(theme={}) {
       backgroundColor: appStyle.calendarBackground
     },
     week: {
-      marginTop: 7,
-      marginBottom: 7,
+      height: FILLER_HEIGHT,
+      marginVertical: 10.5,
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-between',
     },
     ...(theme[STYLESHEET_ID] || {})
   });
