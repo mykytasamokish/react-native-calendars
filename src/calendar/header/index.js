@@ -58,7 +58,7 @@ class CalendarHeader extends Component {
       leftArrow = (
         <TouchableOpacity
           onPress={this.substractMonth}
-          style={this.style.arrow}
+          style={[this.style.arrow, { left: 10 }]}
         >
           {this.props.renderArrow
             ? this.props.renderArrow('left')
@@ -69,7 +69,10 @@ class CalendarHeader extends Component {
         </TouchableOpacity>
       );
       rightArrow = (
-        <TouchableOpacity onPress={this.addMonth} style={this.style.arrow}>
+        <TouchableOpacity
+          onPress={this.addMonth}
+          style={[this.style.arrow, { right: 10 }]}
+        >
           {this.props.renderArrow
             ? this.props.renderArrow('right')
             : <Image
